@@ -1,5 +1,10 @@
 This is an implementation of a distance vector routing algorithm using the Bellman-Ford algorithm. It defines a Node class that represents a node in the network and maintains its routing table and distance vector. The Node class has methods for updating the routing table, sending and receiving distance vectors, and printing the routing table.
 
+This is to implement a simplified version of a routing protocol in a static network. You are required 
+to write a program which builds its routing table based on the distances (i.e., edge weights) to other nodes in the network. The Bellman-Ford
+algorithm should be used to build and update the routing tables. The UDP protocol should be used to exchange the routing table information
+among the nodes in the network.
+
 The Node class uses UDP sockets for sending and receiving data between nodes. It binds a UDP socket to the local port specified as a command line argument, and creates additional sockets for each neighboring port specified as a command line argument. It uses these sockets to send and receive distance vectors to and from its neighbors.
 
 The Node class also maintains a routing table, which is a dictionary that maps destination nodes to the next hop node and the distance to the destination. The update_routing_table method updates the routing table using the Bellman-Ford algorithm, and the send_distance_vector method sends the updated distance vector to its neighbors. The receive_distance_vector method receives a distance vector from a neighbor, updates its own distance vector, updates the routing table if necessary, and sends the updated distance vector to its neighbors if the routing table is updated.
